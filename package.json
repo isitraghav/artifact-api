@@ -1,0 +1,27 @@
+{
+  "name": "artifact--api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "prisma generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.4.2",
+    "axios": "^1.5.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.1",
+    "memory-cache": "^0.2.0",
+    "request-ip": "^3.3.0",
+    "sanitize": "^2.1.2",
+    "underscore": "^1.13.6"
+  },
+  "devDependencies": {
+    "prisma": "^5.4.2"
+  }
+}

@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  heading   String   @db.VarChar(255)
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  content   String   @db.VarChar(20000)
+  pub       String   @db.VarChar(300)
+  uid       String   @db.VarChar(200)
+  images    String   @db.VarChar(10000000) @default("{}")
+}
+
+model IpLog {
+  pub  String @db.VarChar(100)
+  lat  String @db.VarChar(100)
+  long String @db.VarChar(100)
+  ip   String @unique @db.VarChar(300)
+}
